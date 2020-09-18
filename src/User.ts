@@ -1,14 +1,16 @@
-import faker from "faker";
-import { Mappable } from "./CustomMap";
+import faker from 'faker';
+import { Mappable } from './CustomMap';
 
 //export class User {
+//"implements Mappable" phrase is optional, not required! But its better to show like that!
+//This helps TypeScript to catch errors or show direction!
 export class User implements Mappable {
   name: string;
   location: {
     lat: number;
     lng: number;
   };
-  color: string = "red";
+  color: string = 'red';
 
   constructor() {
     this.name = faker.name.firstName();

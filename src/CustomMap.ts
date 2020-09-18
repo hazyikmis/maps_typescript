@@ -1,7 +1,9 @@
 // import { User } from "./User";
 // import { Company } from "./Company";
 
-//instructions to other classes on how they can be an argument to addMarker
+//interfaces are instructions to other classes on how they can be an argument to addMarker
+//"Mappable" interface is a gatekeeper to the "addMarker" function!
+
 //interface Mappable {
 export interface Mappable {
   location: {
@@ -53,7 +55,15 @@ export class CustomMap {
       position: mappable.location,
     });
   }
-  */
+*/
+
+  // addMarker(mappable: Mappable): void {
+  //   //mappable.___ //only common property is location
+  //   new google.maps.Marker({
+  //     map: this.googleMap,
+  //     position: mappable.location,
+  //   });
+  // }
 
   addMarker(mappable: Mappable): void {
     //mappable.___ //only common property is location
@@ -62,7 +72,7 @@ export class CustomMap {
       position: mappable.location,
     });
 
-    marker.addListener("click", () => {
+    marker.addListener('click', () => {
       const infoWindow = new google.maps.InfoWindow({
         content: mappable.markerContent(),
       });

@@ -1,7 +1,9 @@
-import faker, { fake } from "faker";
-import { Mappable } from "./CustomMap";
+import faker, { fake } from 'faker';
+import { Mappable } from './CustomMap';
 
 //export class Company {
+//"implements Mappable" phrase is optional, not required! But its better to show like that!
+//This helps TypeScript to catch errors or show direction!
 export class Company implements Mappable {
   companyName: string;
   catchPhrase: string;
@@ -9,7 +11,7 @@ export class Company implements Mappable {
     lat: number;
     lng: number;
   };
-  color: string = "black";
+  color: string = 'black';
 
   constructor() {
     this.companyName = faker.company.companyName();
